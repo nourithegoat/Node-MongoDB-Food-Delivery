@@ -1,0 +1,16 @@
+extends layout 
+
+block content 
+    h1 Order Details 
+    p Restaurant:  #{order.restaurantName} 
+    p Total: $#{order.total.toFixed(2)} 
+    p Placed at: #{order.createdAt.toDateString()} 
+
+    h3 Items 
+    if order.items && order.items.length 
+        ul 
+            each item in order.items 
+                li #{item.name} x #{item.quantity} 
+    else 
+        p No items??? Ah hell nah smth is wrong here 
+    p: a(href=`/users/${currentUser.id}`) Back to Profile

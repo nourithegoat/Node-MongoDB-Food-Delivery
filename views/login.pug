@@ -1,0 +1,27 @@
+doctype html 
+html 
+    head 
+        title login 
+        link(rel="stylesheet", href="/style.css")
+    body 
+        header 
+            h1 Food Delivery 
+            ul
+                li: a(href="/users") Users 
+                li: a(href="/orders") Order 
+                li: a(href="/register") Register 
+                li: a(href = "/login") Login
+        main 
+            h2 Login 
+
+            if error 
+                p(style="color:red")  #{error} 
+            
+            form(method="POST", action="/login")
+                div 
+                    label(for="username") Username: 
+                    input(type="text", name="username", required)
+                div 
+                    label(for="password") Password: 
+                    input(type="text", name="password", required)
+                button(type="submit") Log In

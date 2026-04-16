@@ -1,0 +1,236 @@
+:root {
+    font-family: system-ui, sans-serif;
+    line-height: 1.35;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 16px;
+    color: #111
+}
+main, #columns{margin-top: 8px;}
+
+h1 {
+    margin: 0px 0px 12px;
+}
+
+label {
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+select {
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.info {
+    margin: 10px 0 8px;
+    font-weight: 600;
+}
+
+#columns {
+    display: grid;
+    grid-template-columns: 220px 1fr 320px;
+    gap: 16px;
+    align-items: start;
+}
+
+/* onto the left categories style */
+#categories {
+    position: sticky;
+    top: 10px;
+}
+
+#categories a {
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background .15s ease, border-color .15s ease;
+}
+
+#categories a:hover,
+#categories a:focus {
+    background: #f6f6f6;
+    border-color: #eee;
+    outline: none;
+}
+section {scroll-margin-top: 70px;}
+
+/* onto middle menu */
+#menu h3 {
+    margin: 16px 0 8px;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee
+}
+
+.item-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+}
+
+.item-name {
+    font-weight: 700;
+}
+
+.item-price {
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.item-desc {
+    color: #666;
+    font-size: 0.92rem;
+    margin-top: 2px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    transition: transform .06s ease, box-shadow .15s ease, border-color .15s ease;
+    margin-top: 6px;
+    /* got this from a css tutorial on btns and looked nice */
+}
+
+.btn:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .06);
+    border-color: #bbb;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+/* onto the dark i mean the right side */
+#order h2 {
+    margin: 0 0 8px;
+}
+
+#orderItems {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.order-line {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-qty {
+    font-variant-numeric: tabular-nums;
+}
+
+#orderTotals {
+    margin-top: 12px;
+    padding-top: 8px;
+}
+
+#orderTotals div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#orderTotals hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 8px 0;
+}
+
+#minMsg {
+    color: #a00;
+    margin: 8px 0 0;
+}
+
+#submitOrder[disabled] {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+#submitOrder {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+}
+
+/* responsive css */
+@media (max-width: 900px) {
+    #columns {
+        grid-template-columns: 1fr;
+    }
+
+    #order {
+        order: 3;
+    }
+
+    #categories {
+        order: 1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        position: static;
+    }
+
+    #menu {
+        order: 2;
+    }
+}
+header {
+    background-color: rgb(48, 36, 189);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    
+}
+header ul{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    color: white;
+    padding: 0;
+    margin: 0;
+}
+header li{
+    list-style: none;
+}
+header a{
+    text-decoration: none;
+    color: white;
+}

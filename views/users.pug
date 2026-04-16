@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+    h1 Users 
+
+    -// Searching form, submits as GET /users?name
+    form(method="GET", action="/users")
+        label(for="name") Search by username: 
+        input(type="text", id="name", name="name", value=searchName)
+        button(type="submit") Search 
+    
+    if searchName && !users.length
+        p No public users found matching "#{searchName}". 
+    else if users.length 
+        if searchName
+            h3 Results for "#{searchName}"
+        else
+            h3 All public users
+        ul 
+            each u in users 
+                li: a(href=`/users/${u._id}`)= u.username
+    else 
+        p No public users found.

@@ -1,0 +1,42 @@
+extends layout 
+block content 
+    h1 Profile 
+
+    if profileUser 
+        h2= profileUser.username 
+
+        if isOwner 
+            p This is your profile.
+        else 
+            p Viewing profile for #{profileUser.username} 
+        
+        // Privacy Status
+        if profileUser.privacy  
+            p Status: Private 
+        else 
+            p Status: Public 
+        
+        //Here only the owner can see the privacy toggle
+        if isOwner 
+            form(method="POST", action=`/users/${profileUser._id}/privacy`)
+                label(for="privacy") Make profile private?
+                input(
+                    type="checkbox",
+                    id="privacy",
+                    name="privacy",
+                    checked=profileUser.privacy ? true: undefined
+                )
+                button(type="submit") Save Privacy Settings 
+        hr
+
+        h3 Order History 
+        if orders && orders.length
+            ul 
+                each o in orders 
+                    li 
+                        a(href=`/orders/${o._id}`)
+                            | #{o.createdAt.toDateString()} - #{o.restaurantName} - $#{o.total.toFixed(2)}   
+        else 
+            p Go order bro you haven't ordered yet 
+    else 
+        p No profile data maaan 

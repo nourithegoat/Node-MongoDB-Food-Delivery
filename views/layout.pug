@@ -1,0 +1,21 @@
+doctype html 
+html 
+    head 
+        title Food Delivery 
+        link(rel="stylesheet", href="/style.css")
+    body 
+        header 
+            h1 Food Delivery 
+            ul
+                li: a(href="/") Home 
+                li: a(href="/orders") Order 
+                li: a(href="/users") Users 
+                if currentUser
+                    li: a(href=`/users/${currentUser.id}`) Profile
+                    li: a(href="/logout") Logout 
+                    li Loggind in as #{currentUser.username}
+                else
+                    li: a(href="/register") Register 
+                    li: a(href = "/login") Login
+            main 
+                block content

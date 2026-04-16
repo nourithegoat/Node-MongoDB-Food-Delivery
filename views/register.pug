@@ -1,0 +1,32 @@
+doctype html 
+html 
+    head 
+        title Register 
+        link(rel="stylesheet", href="/style.css")
+    body 
+        header 
+            h1 Food Delivery 
+            ul 
+                li: a(href="/") Home 
+                li: a(href="/users") Users 
+                li: a(href="/orders") Order 
+                li: a(href="/register") Register 
+                li: a(href = "/login") Login
+        main 
+            h2 Create an account 
+
+            if error 
+                p(style="color:red") #{error} 
+                //-check out "POST" "/register" in server.js to where error comes from :)
+
+            form(method="POST", action="/register")
+                div 
+                    label(for="username") Username: 
+                    input(type="text", name="username", id="username", required)
+                    //- Here we are making a POST request from the html
+                    //- and will use the middleware app.use(express.urlencoded({ extended: true }));
+                div 
+                    label(for="password") Password: 
+                    input(type="text", name="password", id="password", required)
+                button(type="submit") Register
+
