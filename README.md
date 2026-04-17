@@ -132,4 +132,3 @@ Sessions are stored in memory using `express-session` for simplicity.
 
 ## Closing Note
 
-That is all. Thank you for reading and grading :)
