@@ -103,6 +103,8 @@ Main files:
 6. If by any chance you do not have mongodb on your device, refer to https://www.mongodb.com/try/download/community to download MongoDB. 
  
 ### Docker 🐳
+HIGHLY Recommend you use docker to run the project, makes your life easier. 
+
 Prerequisites: Ensure Docker Desktop is installed and running. Note: Following commands are Bash
 
 Launch the environment: From the project root, run:
