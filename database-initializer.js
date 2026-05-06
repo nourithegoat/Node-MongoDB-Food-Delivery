@@ -11,7 +11,7 @@ userNames.forEach(name =>{
 
 //config
 const config = {
-	dbIp: "mongodb://localhost:27017/",
+	dbIp: "mongodb://dataBase:27017/",
 	dbName:'a4'
 }
 //mongo

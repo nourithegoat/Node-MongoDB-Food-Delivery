@@ -101,7 +101,30 @@ Main files:
    http://localhost:3000
    ```
 6. If by any chance you do not have mongodb on your device, refer to https://www.mongodb.com/try/download/community to download MongoDB. 
+ 
+### Docker 🐳
+Prerequisites: Ensure Docker Desktop is installed and running. Note: Following commands are Bash
 
+Launch the environment: From the project root, run:
+
+```Bash
+docker compose up -d --build
+```
+This builds the images, sets up the network, and starts the Node.js app and MongoDB containers in the background.
+Seed the database: 
+Run the initialization script inside the running app container:
+
+```Bash
+docker compose exec app node database-initializer.js
+```
+Access the App: Open your browser to http://localhost:3000.
+
+
+Shut down: To stop the containers while keeping your data safe, run:
+
+```Bash
+docker compose down
+```
 ## Design Choices
 
 ### 1. Pug Layout and Views

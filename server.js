@@ -281,7 +281,7 @@ const app = express();
 const PORT = 3000; //change here if needed
 
 //initializing our users and mongo connection via mongoose
-mongoose.connect("mongodb://localhost:27017/a4");
+mongoose.connect("mongodb://dataBase:27017/a4");
 const db = mongoose.connection;
 db.on("error", (err) => {
     console.error("Mongo connection error:", err);
